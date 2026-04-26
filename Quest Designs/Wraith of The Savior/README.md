@@ -27,6 +27,9 @@ The quest is organized by the following node structure as defined in the technic
 | **Scene 17-22**| The Resolution | Siding with the Baron, the Doppler, or remaining neutral. |
 
 ## 5. Branching Logic Map
+![Quest Branches](./logic_flow.png)
+
+## 7. Three Different Ending
 * **Path A (Pro-Order):** Kill the Doppler. Receive a reward and a mutation formula from the Baron.
 * **Path B (Pro-Justice):** Assist the Doppler in killing the Baron. The Doppler assumes the Baron's identity.
 * **Path C (Neutral):** Refuse to choose between "two evils". The Doppler kills the Baron while the Witcher walks away.
