@@ -16,4 +16,11 @@ A Witcher-style quest involving moral ambiguity and "shades of grey" choices.
 * **[📂 VIEW DESIGN DOCUMENTATION](./Quest%20Designs/Monsters%20of%20Aen%27Vaereth/)**
 
 ---
+#### 2. Wraith of The Savior
+It begins as a routine monster contract, but as the hunt unfolds, the mounting oddity spirals toward a twisted conclusion.
+
+* **[🕹️ PLAY INTERACTIVE QUEST(abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/Wraith%20of%20The%20Savior/)**
+* **[📂 VIEW DESIGN DOCUMENTATION](./Quest%20Designs/Wraith%20of%20The%20Savior/)**
+
+---
 *Future quests will be added here...*
