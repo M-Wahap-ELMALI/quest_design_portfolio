@@ -33,6 +33,7 @@ The quest is organized by the following node structure as defined in the technic
 
 ## 6. Project Links
 * **[🕹️ Play Interactive Version](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/Wraith%20of%20The%20Savior/)**
+* **[📄 Download The Full Narrative Script](./Wraith%20of%20The%20Savior.pdf)**
 * **[📄 Read The Full Narrative Script](./SCRIPT.md)**
 * **[📊 Logic Flowchart](./logic_flow.png)**
 
