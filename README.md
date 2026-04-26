@@ -12,8 +12,8 @@ Quest Design ideas for RPGs
 #### 1. Monsters of Aen'Vaereth
 A Witcher-style quest involving moral ambiguity and "shades of grey" choices.
 
-* **[🕹️ PLAY INTERACTIVE QUEST(abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Monsters%20of%20Aen%27Vaereth/)**
-* **[📂 VIEW DESIGN DOCUMENTATION](./Monsters%20of%20Aen%27Vaereth/)**
+* **[🕹️ PLAY INTERACTIVE QUEST(abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/Monsters%20of%20Aen%27Vaereth/)**
+* **[📂 VIEW DESIGN DOCUMENTATION](./Quest%20Designs/Monsters%20of%20Aen%27Vaereth/)**
 
 ---
 *Future quests will be added here...*
