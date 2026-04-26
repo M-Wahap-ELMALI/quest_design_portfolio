@@ -29,12 +29,12 @@ The quest is organized by the following node structure as defined in the technic
 ## 5. Branching Logic Map
 ![Quest Branches](./logic_flow.png)
 
-## 7. Three Different Ending
+## 6. Three Different Ending
 * **Path A (Pro-Order):** Kill the Doppler. Receive a reward and a mutation formula from the Baron.
 * **Path B (Pro-Justice):** Assist the Doppler in killing the Baron. The Doppler assumes the Baron's identity.
 * **Path C (Neutral):** Refuse to choose between "two evils". The Doppler kills the Baron while the Witcher walks away.
 
-## 6. Project Links
+## 7. Project Links
 * **[🕹️ Play Interactive Version](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/Wraith%20of%20The%20Savior/)**
 * **[📄 Download The Full Narrative Script](./Wraith%20of%20The%20Savior.pdf)**
 * **[📄 Read The Full Narrative Script](./SCRIPT.md)**
