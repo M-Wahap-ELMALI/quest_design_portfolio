@@ -33,8 +33,8 @@ The quest is organized by the following node structure as defined in the technic
 ## 6. Project Links
 * **[🕹️ Play Interactive Version (abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/Monsters%20of%20Aen%27Vaereth/)**
 * **[📄 Read The Full Narrative Script](./SCRIPT.md)**
-* **[📄 Download The Full Narrative Script](./Quest%20Designs/Monsters%20of%20Aen%27Vaereth.pdf)**
-* **[📊 Logic Flowchart](./Quest%20Designs/monsters_of_aen_vaereth_branch.png)**
+* **[📄 Download The Full Narrative Script](./Monsters%20of%20Aen%27Vaereth.pdf)**
+* **[📊 Logic Flowchart](./monsters_of_aen_vaereth_branch.png)**
   
 ---
 * **Developed as a portfolio piece for narrative design, originally created for TTRPG.*
