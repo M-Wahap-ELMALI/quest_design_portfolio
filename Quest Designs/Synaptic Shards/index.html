@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNAPTIC SHARDS | Kael's Mission</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #00ff9f; /* Neon Green */
+            --accent-color: #ff0055; /* Cyber Pink */
+            --border-color: #008f11;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Scanline Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        #game-container {
+            width: 80%;
+            max-width: 800px;
+            height: 80vh;
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px var(--border-color);
+            position: relative;
+            background: rgba(0, 20, 0, 0.1);
+        }
+
+        #stats-bar {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        #content-area {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            padding-right: 10px;
+        }
+
+        #content-area::-webkit-scrollbar {
+            width: 5px;
+        }
+        #content-area::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+        }
+
+        .description { color: #888; font-style: italic; margin-bottom: 15px; }
+        .dialogue { margin-bottom: 10px; }
+        .speaker { color: var(--accent-color); font-weight: bold; }
+
+        #choices-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+            font-family: var(--font-main);
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 10px var(--text-color);
+        }
+
+        button:disabled {
+            border-color: #444;
+            color: #444;
+            cursor: not-allowed;
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <div id="stats-bar">
+        <span>LOC: NIGHT CITY - DISTRICT KABUKI</span>
+        <span id="eddies-display">EDDIES: 10000</span>
+    </div>
+    <div id="content-area">
+        </div>
+    <div id="choices-container">
+        </div>
+</div>
+
+<script>
+    const contentArea = document.getElementById('content-area');
+    const choicesContainer = document.getElementById('choices-container');
+    const eddiesDisplay = document.getElementById('eddies-display');
+
+    let gameState = {
+        eddies: 10000,
+        techSkill: 15,
+        streetCred: 20,
+        hasChronos: false,
+        crewFound: []
+    };
+
+    const story = {
+        SCENE_ONE: {
+            text: `
+                <div class="description">Night has settled heavily over the district. Outside, a bitter wind drives acid rain against the steel walls of a worn-down Kabuki dive bar. The neon sign above the door flickers endlessly. Kael steps inside. Warmth greets him but not comfort.</div>
+                <div class="dialogue"><span class="speaker">Eddie:</span> You're late, Kael. Or maybe I'm early. I can't... I can't tell where the clock is anymore.</div>
+                <div class="dialogue"><span class="speaker">Kael:</span> You look like a fried motherboard, Eddie. I'm looking for the crew. They were supposed to meet me at the extraction point.</div>
+                <div class="dialogue"><span class="speaker">Eddie:</span> The crew... yeah. I have the data. But my synapses are misfiring. I need to re-sync. I need a hit of Chronos-V. Pure stuff.</div>
+            `,
+            choices: [
+                { text: "Fine. I'll go to the Flooded District.", nextScene: "SCENE_TWO" },
+                { text: "You're too far gone. I'll find them myself.", nextScene: "GAME_OVER" },
+                { text: "This better be worth the heat I'm going to catch.", nextScene: "SCENE_THREE_DIRECT" }
+            ]
+        },
+        SCENE_TWO: {
+            text: `
+                <div class="description">Kael navigates through the jagged metal teeth of the Flooded District. The air smells of salt, rotting plastic, and blood. Red optics of Scavenger drones flicker to life.</div>
+                <div class="dialogue"><span class="speaker">Kael:</span> Great. Scavs. The bottom feeders of the food chain.</div>
+                <div class="description">After a brutal firefight, Kael kicks open a crate. Inside, he finds Chronos-V injectors and a Zero-G pipe. There is a jelly-ish residue on one—biological waste from a botched experiment.</div>
+            `,
+            onEnter: () => { gameState.hasChronos = true; },
+            choices: [
+                { text: "Head back to the bar.", nextScene: "SCENE_THREE" }
+            ]
+        },
+        SCENE_THREE: {
+            text: `
+                <div class="dialogue"><span class="speaker">Kael:</span> Here's your ticket to the moon, Eddie. Chronos-V. Pure enough to melt your chrome.</div>
+                <div class="description">Eddie takes a long hit. His eyes roll back, glowing with a flickering violet light. Data begins dumping into Kael's HUD.</div>
+                <div class="dialogue"><span class="speaker">Eddie:</span> Mick is in Westbrook... Slim is in North Oak... Iron Pete is in Watson... and the twins are in the Badlands.</div>
+            `,
+            choices: [
+                { text: "Find Mick (Westbrook Brothel)", nextScene: "SCENE_FOUR" },
+                { text: "Find Slim (North Oak Trash Shaft)", nextScene: "SCENE_FIVE" },
+                { text: "Find Iron Pete (Watson Tech District)", nextScene: "SCENE_SIX" },
+                { text: "Find Jax and Dax (Badlands)", nextScene: "SCENE_SEVEN" }
+            ]
+        },
+        SCENE_FOUR: {
+            text: `
+                <div class="description">Kael finds Mick strapped into a high-voltage neuro-torture chair in Clouds. Four Moxes surround him.</div>
+                <div class="dialogue"><span class="speaker">Moxie Leader:</span> Another step and I cook his pre-frontal cortex. This "Romeo" promised my girls orbital slots. He lied.</div>
+            `,
+            choices: [
+                { text: "Settle the tab [5000 EDDIES]", nextScene: "SCENE_FOUR_A", cost: 5000 },
+                { text: "Threaten them: 'Step aside or I start breaking chrome.'", nextScene: "SCENE_FOUR_B" },
+                { text: "[TECHNICAL 15] Prove his neural-port is fried and worthless.", nextScene: "SCENE_FOUR_C", techRequired: 15 }
+            ]
+        },
+        SCENE_FOUR_A: {
+            text: `
+                <div class="description">The transaction clears. Mick falls forward, sobbing.</div>
+                <div class="dialogue"><span class="speaker">Kael:</span> Shut up, Mick. Get to the safehouse.</div>
+            `,
+            onEnter: () => { gameState.crewFound.push('Mick'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_FOUR_B: {
+            text: `
+                <div class="description">Combat sequence! Kael moves with unnatural speed. After the fight, he overrides the chair.</div>
+                <div class="dialogue"><span class="speaker">Kael:</span> Get up, Mick. If you ever make me choose between an army and you again, I'm choosing the army.</div>
+            `,
+            onEnter: () => { gameState.crewFound.push('Mick'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_FOUR_C: {
+            text: `
+                <div class="dialogue"><span class="speaker">Kael:</span> See that pulsing amber light? He's a walking glitch. You're burning electricity on a dead account.</div>
+                <div class="description">The Leader sighs. "Fine. Take him. He's not worth the wear and tear."</div>
+            `,
+            onEnter: () => { gameState.crewFound.push('Mick'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_FIVE: {
+            text: `
+                <div class="description">Kael peers into a massive garbage shaft in North Oak. Slim is pinned under a hydraulic compressor.</div>
+                <div class="dialogue"><span class="speaker">Slim:</span> Kael! My legs are jammed and Scav-drones are circling!</div>
+            `,
+            choices: [
+                { text: "Redirect power from optics to legs (Slim goes blind).", nextScene: "SCENE_FIVE_A" },
+                { text: "Carry him out (Double pay later).", nextScene: "SCENE_FIVE_B" },
+                { text: "Leave him. No dead weight.", nextScene: "SCENE_FIVE_C" }
+            ]
+        },
+        SCENE_FIVE_A: {
+            text: `<div class="description">Slim's eyes go dark, but his legs hiss with violent force. Kael hauls him up the cable.</div>`,
+            onEnter: () => { gameState.crewFound.push('Slim'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_FIVE_B: {
+            text: `<div class="description">Kael's exo-skeleton groans under the mass. They climb slowly out of the abyss.</div>`,
+            onEnter: () => { gameState.crewFound.push('Slim'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_FIVE_C: {
+            text: `<div class="description">Kael turns his back. Below, Slim's shouting fades into the sound of grinding metal.</div>`,
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_SIX: {
+            text: `
+                <div class="description">Iron Pete's workbench is locked behind a corporate digital seal. Tax enforcers guard the alley.</div>
+                <div class="dialogue"><span class="speaker">Iron Pete:</span> It's a shakedown, Kael! They say I owe 'Protection Taxes'.</div>
+            `,
+            choices: [
+                { text: "Hack the hub and wipe the debt.", nextScene: "SCENE_SIX_A" },
+                { text: "Zero the enforcers and take the bypass.", nextScene: "SCENE_SIX_B" },
+                { text: "Pay the Tax [8000 EDDIES].", nextScene: "SCENE_SIX_C", cost: 8000 }
+            ]
+        },
+        SCENE_SIX_A: {
+            text: `<div class="description">Kael jacks in. The blue glow turns white. Pete's machinery hums to life.</div>`,
+            onEnter: () => { gameState.crewFound.push('Pete'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_SIX_B: {
+            text: `<div class="description">Gunfire erupts. Kael loots a bypass chip from the steaming bodies.</div>`,
+            onEnter: () => { gameState.crewFound.push('Pete'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_SIX_C: {
+            text: `<div class="description">The enforcers check their tablets, nod, and retract the security mesh.</div>`,
+            onEnter: () => { gameState.crewFound.push('Pete'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_SEVEN: {
+            text: `
+                <div class="description">A sandstorm howls outside a Nomad bar. Jax and Dax are locked in a drinking contest.</div>
+                <div class="dialogue"><span class="speaker">Dax:</span> Beat us in arm wrestling, and we follow you to the gates of Arasaka.</div>
+            `,
+            choices: [
+                { text: "Take them both on. One arm each.", nextScene: "SCENE_SEVEN_A" },
+                { text: "Pay their massive tab [3000 EDDIES].", nextScene: "SCENE_SEVEN_B", cost: 3000 },
+                { text: "[STREET CRED 20] 'Do I look like I have time for games?'", nextScene: "SCENE_SEVEN_C", credRequired: 20 }
+            ]
+        },
+        SCENE_SEVEN_A: {
+            text: `<div class="description">Kael slams both their arms into the table, cracking the surface. "We're moving," Jax grunts.</div>`,
+            onEnter: () => { gameState.crewFound.push('Twins'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_SEVEN_B: {
+            text: `<div class="description">Kael authorizes the transfer. The twins drain their glasses and stand up.</div>`,
+            onEnter: () => { gameState.crewFound.push('Twins'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_SEVEN_C: {
+            text: `<div class="description">The twins recognize Kael. "The one who zeroed the hit-squad in Watson? We're in."</div>`,
+            onEnter: () => { gameState.crewFound.push('Twins'); },
+            choices: [{ text: "Return to Crew Hub", nextScene: "HUB" }]
+        },
+        SCENE_EIGHT: {
+            text: `
+                <div class="description">The safehouse is cold. The crew filters in: Mick, Slim, Pete, and the Twins. They look like a scrapyard.</div>
+                <div class="dialogue"><span class="speaker">Kael:</span> (Activates hologram) We go in tonight. The security is run by an AI that doesn't believe in survivors.</div>
+                <div class="dialogue"><span class="speaker">Kael:</span> <span class="glitch">GEAR UP BOYS! WE ARE GOING TO BURN THE CITY TO THE GROUND!</span></div>
+                <h2 style="color:var(--accent-color)">TO BE CONTINUED...</h2>
+            `,
+            choices: [{ text: "Restart Simulation", nextScene: "SCENE_ONE" }]
+        },
+        GAME_OVER: {
+            text: `<div class="dialogue"><span class="speaker">Kael:</span> I don't need a junkie's help.</div><div class="description">Kael walked into the night and was never heard from again. The mission failed before it began.</div>`,
+            choices: [{ text: "Reboot System", nextScene: "SCENE_ONE" }]
+        }
+    };
+
+    function renderScene(sceneKey) {
+        // Special Hub logic to handle non-linear crew gathering
+        if (sceneKey === "HUB") {
+            if (gameState.crewFound.length >= 4) {
+                sceneKey = "SCENE_EIGHT";
+            } else {
+                sceneKey = "SCENE_THREE";
+            }
+        }
+
+        const scene = story[sceneKey];
+        if (scene.onEnter) scene.onEnter();
+
+        eddiesDisplay.innerText = `EDDIES: ${gameState.eddies}`;
+        contentArea.innerHTML = scene.text;
+        choicesContainer.innerHTML = '';
+
+        scene.choices.forEach(choice => {
+            const btn = document.createElement('button');
+            btn.innerText = choice.text;
+            
+            // Check requirements
+            let disabled = false;
+            if (choice.cost && gameState.eddies < choice.cost) disabled = true;
+            if (choice.techRequired && gameState.techSkill < choice.techRequired) disabled = true;
+            if (choice.credRequired && gameState.streetCred < choice.credRequired) disabled = true;
+
+            // Don't show choices for crew members already found
+            if (sceneKey === "SCENE_THREE") {
+                if (choice.text.includes("Mick") && gameState.crewFound.includes("Mick")) disabled = true;
+                if (choice.text.includes("Slim") && gameState.crewFound.includes("Slim")) disabled = true;
+                if (choice.text.includes("Pete") && gameState.crewFound.includes("Pete")) disabled = true;
+                if (choice.text.includes("twins") && gameState.crewFound.includes("Twins")) disabled = true;
+            }
+
+            if (disabled) {
+                btn.disabled = true;
+            } else {
+                btn.onclick = () => {
+                    if (choice.cost) gameState.eddies -= choice.cost;
+                    renderScene(choice.nextScene);
+                };
+            }
+            choicesContainer.appendChild(btn);
+        });
+
+        contentArea.scrollTop = 0;
+    }
+
+    // Start Game
+    renderScene('SCENE_ONE');
+</script>
+
+</body>
+</html>
