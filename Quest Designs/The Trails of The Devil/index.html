@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Trails of The Devil | A Witcher Story</title>
+    <style>
+        :root {
+            --bg-color: #0c0c0c;
+            --text-color: #d1d1d1;
+            --accent-color: #8b0000;
+            --button-bg: #1a1a1a;
+            --button-hover: #333;
+            --border-color: #444;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #game-container {
+            width: 90%;
+            max-width: 700px;
+            background: #111;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            border-radius: 4px;
+        }
+
+        #description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            min-height: 150px;
+            white-space: pre-wrap;
+        }
+
+        .inventory {
+            font-size: 0.9rem;
+            color: #888;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        #choices {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .title {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <h2 class="title">The Trails of The Devil</h2>
+    <div id="inventory-display" class="inventory">Inventory: Empty</div>
+    <div id="description"></div>
+    <div id="choices"></div>
+</div>
+
+<script>
+    const gameData = {
+        inventory: { hasHeart: false, hasBook: false, hasStone: false },
+        
+        scenes: {
+            start: {
+                text: "Night has settled heavily over the village. Outside, a bitter wind drives snow against the wooden walls of a worn tavern. You take a seat in the far corner. A hooded man named Erdesax approaches. \n\nErdesax: 'You\'re a Witcher. We have a problem. If you don\'t help me... a demon will return to this world.'",
+                choices: [
+                    { text: "Go on.", next: "sceneTwo" },
+                    { text: "Depends on the pay.", next: "sceneThree" },
+                    { text: "Not my problem.", next: "end_leave" }
+                ]
+            },
+            sceneThree: {
+                text: "Witcher: 'I don't hunt legends for free.'\n\nErdesax: 'It is more important than all the gold in Kovir. I am ready to pay.'",
+                choices: [{ text: "Tell me about this problem.", next: "sceneTwo" }]
+            },
+            sceneTwo: {
+                text: "Erdesax explains that a demon is on the run and a ritual has begun. He needs two things: The Book of Old Priests and the Heart of a Leshen.\n\nErdesax: 'Use fire against the beast. We will meet at the place marked on this map.'",
+                choices: [
+                    { text: "Hunt the Leshen", next: "sceneFour" },
+                    { text: "Find the Book", next: "sceneFive" }
+                ]
+            },
+            sceneFour: {
+                text: "The forest swallows all sound. A half-human, half-leshen beast rises from the ground, screaming. You slay the beast and cut out its heart. You notice a symbol on the body—it matches Erdesax's emblem.",
+                onEnter: () => { gameData.inventory.hasHeart = true; },
+                choices: [
+                    { text: "Continue to find the Book", next: "sceneFive", condition: () => !gameData.inventory.hasBook },
+                    { text: "Go to the meeting point", next: "sceneSix", condition: () => gameData.inventory.hasBook }
+                ]
+            },
+            sceneFive: {
+                text: "The house is rotting. Inside, you find a teleportation stone and a library. By manipulating the light of the torches, you walk through a mirror and find the ancient Book.",
+                onEnter: () => { gameData.inventory.hasBook = true; gameData.inventory.hasStone = true; },
+                choices: [
+                    { text: "Continue to hunt the Leshen", next: "sceneFour", condition: () => !gameData.inventory.hasHeart },
+                    { text: "Go to the meeting point", next: "sceneSix", condition: () => gameData.inventory.hasHeart }
+                ]
+            },
+            sceneSix: {
+                text: "You meet Erdesax at the foot of the mountain.\n\nErdesax: 'Finally! Give me everything. We must go to the top to strengthen the seal!'",
+                choices: [
+                    { text: "Use the teleportation stone to go up", next: "sceneNine", condition: () => gameData.inventory.hasStone },
+                    { text: "Climb the mountain (Fight Harpies)", next: "sceneNine" }
+                ]
+            },
+            sceneNine: {
+                text: "At the peak, Erdesax puts the book on a pillar and crushes the Leshen heart. His skin cracks, revealing violet light. He wasn't sealing a demon—he IS the demon.\n\nErdesax: 'Stop! Help me finish this and I will grant you anything. Money, titles... whatever you want!'",
+                choices: [
+                    { text: "I've killed enough 'gods' to know they all bleed. (Attack)", next: "sceneEleven" },
+                    { text: "If you're going to be a god, I'd rather be on your side. (Help)", next: "sceneTen" }
+                ]
+            },
+            sceneEleven: {
+                text: "You draw your silver blade and shatter the pillars using AARD. Erdesax is pulled into the void of his own making. The book turns to ash. \n\nENDING: No demon. No gold. Just another cold night.",
+                choices: [{ text: "Play Again", next: "start" }]
+            },
+            sceneTen: {
+                text: "You defend the pillars from spectral wraiths. The ritual completes. A massive shadow-being rises.\n\nShadow Erdesax: 'I am free! Tell me your wish, Witcher.'",
+                choices: [
+                    { text: "I choose to send you back to Hell.", next: "sceneTwelve" },
+                    { text: "I want the coins of Kovir.", next: "sceneThirteen" },
+                    { text: "I want a sword that is strong.", next: "sceneFourteen" }
+                ]
+            },
+            sceneTwelve: {
+                text: "The demon screams as your wish binds him. He is dragged back into the abyss. You escape the collapsing mountain with nothing but your life.\n\nENDING: The Treacherous Savior.",
+                choices: [{ text: "Play Again", next: "start" }]
+            },
+            sceneThirteen: {
+                text: "Chests of gold materialize. You are rich beyond measure, but as you touch the coins, they leave a permanent black stain on your hands that will never wash off.\n\nENDING: The Price of Greed.",
+                choices: [{ text: "Play Again", next: "start" }]
+            },
+            sceneFourteen: {
+                text: "The demon forges 'Fate-Breaker' from the rift. It is the deadliest blade on the Continent, but it hums with a hunger for souls.\n\nENDING: The Part of the Darkness.",
+                choices: [{ text: "Play Again", next: "start" }]
+            },
+            end_leave: {
+                text: "You walk out into the snow. Not every problem is a Witcher's problem.",
+                choices: [{ text: "Play Again", next: "start" }]
+            }
+        }
+    };
+
+    function updateInventory() {
+        let items = [];
+        if (gameData.inventory.hasHeart) items.push("Leshen Heart");
+        if (gameData.inventory.hasBook) items.push("Book of Old Priests");
+        if (gameData.inventory.hasStone) items.push("Teleportation Stone");
+        document.getElementById('inventory-display').innerText = "Inventory: " + (items.length ? items.join(", ") : "Empty");
+    }
+
+    function renderScene(sceneKey) {
+        const scene = gameData.scenes[sceneKey];
+        if (scene.onEnter) scene.onEnter();
+        
+        document.getElementById('description').innerText = scene.text;
+        const choicesContainer = document.getElementById('choices');
+        choicesContainer.innerHTML = '';
+
+        scene.choices.forEach(choice => {
+            if (choice.condition && !choice.condition()) return;
+            
+            const btn = document.createElement('button');
+            btn.innerText = choice.text;
+            btn.onclick = () => {
+                renderScene(choice.next);
+                updateInventory();
+            };
+            choicesContainer.appendChild(btn);
+        });
+        updateInventory();
+    }
+
+    // Start the game
+    renderScene('start');
+</script>
+
+</body>
+</html>
