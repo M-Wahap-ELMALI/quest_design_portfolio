@@ -21,8 +21,8 @@
 **Dialogue(Eddie):** Then you’re not finding your team. Look, I know where a stash is. A Scavenger nest out in the Flooded District. They’ve got the injectors and the Zero-G pipe needed to smoke it. Get me the hit, and I’ll give you every location in my head.
 
 **Choices:**
-1.	Fine. I’ll go to the Flooded District. **(Go to SCENE TWO) **
-2.	You’re too far gone. I’ll find them myself. **(Kael leaves the conversation) **
+1.	Fine. I’ll go to the Flooded District. **(Go to SCENE TWO)**
+2.	You’re too far gone. I’ll find them myself. **(Kael leaves the conversation)**
 3.	This better be worth the heat I’m going to catch. **(Go to SCENE THREE)** 
 
 ---

@@ -30,5 +30,14 @@ Walking on the trails of the devil is never easy. It is a road of treasons.
 * **[📂 VIEW DESIGN DOCUMENTATION](./Quest%20Designs/The%20Trails%20of%20The%20Devil/)**
 
 ---
+#### 4. Synaptic Shards
+Beginning quest which is focusing on colorfull NPC's in the world of Cyberpunk. 
+
+* **[🕹️ Play Interactive Version (abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/Synaptic%20Shards/)**
+* **[📂 VIEW DESIGN DOCUMENTATION](./Quest%20Designs/Synaptic%20Shards/)**
+
+
+
+---
 
 *Future quests will be added here...*
