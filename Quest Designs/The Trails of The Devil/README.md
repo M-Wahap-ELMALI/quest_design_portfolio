@@ -36,7 +36,7 @@ The quest is organized by the following node structure as defined in the technic
 * **Path D (The Dark Hunter):** Request a sword of "solidified darkness" called *Fate-Breaker*.
 
 ## 7. Project Links
-* **[🕹️ Play Interactive Version](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/The%20Trails%20of%20The%20Devil/)**
+* **[🕹️ Play Interactive Version (abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/The%20Trails%20of%20The%20Devil/)**
 * **[📄 Download The Full Narrative Script](./The%20Trails%20of%20The%20Devil.pdf)**
 * **[📄 Read The Full Narrative Script](./SCRIPT.md)**
 * **[📊 Logic Flowchart](./logic_flow.png)**
