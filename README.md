@@ -23,7 +23,7 @@ It begins as a routine monster contract, but as the hunt unfolds, the oddness of
 * **[📂 VIEW DESIGN DOCUMENTATION](./Quest%20Designs/Wraith%20of%20The%20Savior/)**
 
 ---
-### 3. The Trails of The Devil
+#### 3. The Trails of The Devil
 Walking on the trails of the devil is never easy. It is a road of treasons.
 
 * **[🕹️ Play Interactive Version (abridged version)](https://m-wahap-elmali.github.io/quest_design_portfolio/Quest%20Designs/The%20Trails%20of%20The%20Devil/)**
