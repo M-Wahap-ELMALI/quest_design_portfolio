@@ -27,7 +27,7 @@ The quest is organized by the following node structure as defined in the technic
 | **SCENE 8** | **The Assembly** | Final briefing at the safehouse and initiating the vault heist. |
 
 ## 5. Branching Logic Map
-[📊 Logic Flowchart (Image)](./logic_flow.png)
+![Quest Branches](./logic_flow.png)
 
 ## 6. Major Endings & Variations
 * **The Perfect Run:** All four specialists are functional; the vault heist proceeds with maximum support.
