@@ -1,13 +1,51 @@
-# quest_design_portfolio
+# Quest Design Portfolio
 
-### NOVELS
+This repository serves as the central directory for my creative and structural narrative work, dividing my focus into two core disciplines: **Systemic Quest Design** and **Long-Form Novel Architecture**.
 
-#### KINGDOM OF DESTINY: Solomon's Heritage
-* **[📜More details about the book](./Novels/)**
+
 ---
 
-### QUEST DESIGN DOCUMENTS
-Quest Design ideas for RPGs
+
+## Narrative Philosophy: Quests vs. Novels
+
+While both sides of this portfolio share the same dedication to building rich, immersive fantasy worlds, they serve completely different structural purposes:
+
+*   **Quest Design (Player-Led Choice & Logic):** This is where world-building meets systemic design. Instead of forcing a single path, this section focuses heavily on player agency, non-linear progression trees, and underlying engine state loops. The documentation emphasizes the mechanics of choice, tracking variable flags, managing dynamic pacing, and outlining systemic player options where alternative paths directly alter the game world. It is about creating a living sandbox where the player's choices actually matter.
+
+*   **Creative Writing (Prose & Lyrical Narrative):** This is where the world comes alive through atmosphere and voice. This section focuses on deep world descriptions, linear thematic architecture, and the emotional resonance of sentence-level prose. Instead of managing player choice loops, these projects rely heavily on descriptive atmosphere, character vulnerability, and a seamless integration of performance and poetry directly into the cadence of the text. It values raw emotional impact and uncompromising narrative depth over mechanics.
+
+
+---
+
+
+## NOVELS
+
+
+#### 1. Kingdom of Destiny: Solomon's Heritage
+
+*   **Status:** Published (ISBN: 9798325091551)
+
+*   **Genre:** Epic High-Fantasy / Investigative Thriller
+
+*   **Brief Synopsis:** A fast-paced, dual-timeline epic bridging ancient mythological secrets with modern tactical survival. The story maps complex, trap-laden ancient ruins and blood-locked artifacts that serve as the physical keys to solving a contemporary conspiracy. The prose balances high-stakes tension with rigorous, systemic historical lore, making the setting itself a dangerous puzzle to decipher.
+
+* [**Solomon's Heritage**](./Solomon%27s%20Heritage/)
+
+
+#### 2. Crossroads: Hope and The Curse
+
+*   **Status:** In Progress (Unfinished Manuscript)
+
+*   **Genre:** Atmospheric Dark Fantasy Epic
+
+*   **Brief Synopsis:** An epic dark fantasy chronicle that bridges a peaceful present era with a forgotten, ancient world fractured by volatile dimensional gateways. The story charts the heavy emotional and physical weight borne by characters chasing absolute retribution or carrying raw, volatile magical curses. The prose relies deeply on the raw, acoustic cadence of embedded bards' ballads to reflect the psychological and environmental shifts of the journey.
+
+* [**The Hope And The Curse**](./The%20Hope%20And%20The%20Curse/)
+
+
+
+## QUEST DESIGN DOCUMENTS
+
 
 #### 1. Monsters of Aen'Vaereth
 A Witcher-style quest involving moral ambiguity and "shades of grey" choices.
