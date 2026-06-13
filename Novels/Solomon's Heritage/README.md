@@ -38,7 +38,7 @@
 
 ## To Read
 
-* [Solomon's Heritage first ten pages](./Solomo%27s%20Heritage%20first%20ten%pages.pdf)
+* [Solomon's Heritage first ten pages](./Solomo%27s%20Heritage%20first%20ten%20pages.pdf)
 
 
 ## 🔗 The Link
