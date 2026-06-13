@@ -29,7 +29,7 @@ While both sides of this portfolio share the same dedication to building rich, i
 
 *   **Brief Synopsis:** A fast-paced, dual-timeline epic bridging ancient mythological secrets with modern tactical survival. The story maps complex, trap-laden ancient ruins and blood-locked artifacts that serve as the physical keys to solving a contemporary conspiracy. The prose balances high-stakes tension with rigorous, systemic historical lore, making the setting itself a dangerous puzzle to decipher.
 
-* [**Solomon's Heritage**](./Solomon%27s%20Heritage/)
+* [**Solomon's Heritage**](./Novels/Solomon%27s%20Heritage/)
 
 
 #### 2. Crossroads: Hope and The Curse
@@ -40,7 +40,7 @@ While both sides of this portfolio share the same dedication to building rich, i
 
 *   **Brief Synopsis:** An epic dark fantasy chronicle that bridges a peaceful present era with a forgotten, ancient world fractured by volatile dimensional gateways. The story charts the heavy emotional and physical weight borne by characters chasing absolute retribution or carrying raw, volatile magical curses. The prose relies deeply on the raw, acoustic cadence of embedded bards' ballads to reflect the psychological and environmental shifts of the journey.
 
-* [**The Hope And The Curse**](./The%20Hope%20And%20The%20Curse/)
+* [**The Hope And The Curse**](./Novels/The%20Hope%20And%20The%20Curse/)
 
 
 
