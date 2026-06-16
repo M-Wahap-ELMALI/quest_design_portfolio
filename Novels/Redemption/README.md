@@ -40,7 +40,7 @@ The narrative leverages a **dual-reality framing device**. On the surface, the s
 
 ## Project Links
 
-* [**Read the First Ten Pages Here**](./Redemption%20First%20Ten%Pages.pdf)
+* [**Read the First Ten Pages Here**](./Redemption%20First%20Ten%20Pages.pdf)
 
 ---
 
