@@ -56,7 +56,7 @@ While both sides of this portfolio share the same dedication to building rich, i
 *   **Status:** Permanently Shelved (Merged into *Crossroads: Hope and The Curse*)
 *   **Genre:** Character-Driven Gritty Fantasy
 *   **Brief Synopsis:** A brief, highly atmospheric opening draft detailing the visceral weight of battlefield brotherhood and a sudden midnight ambush in the dark, windswept forests of the West. Development on this standalone storyline was halted to officially fold its characters, dialogue style, and thematic elements directly into the grander narrative tapestry of *Crossroads: Hope and The Curse*.
-*   [**Brother Blood**](./Novels/Brother%20Blood/)
+*   [**Blood Brother**](./Novels/Blood%20Brother/)
 
 
 ## QUEST DESIGN DOCUMENTS
