@@ -35,3 +35,10 @@ This section houses the structural architecture, world-building documentation, a
 *   **Genre:** Gritty Urban Dark Fantasy / Psychological Noir
 *   **Overview:** An atmospheric, contemporary dark fantasy tracking a desperate street criminal in Birmingham who becomes the host to an ancient cosmic entity. The narrative balances a gritty crime-noir reality with a hidden world of occult agencies, divine gatekeepers, and runic iron sorcery.
 *   [**More details about Redemption: The Saint and the Beast**](./Redemption/)
+
+
+### 4. Brother Blood
+*   **Status:** Permanently Shelved (Merged into *Crossroads: Hope and The Curse*)
+*   **Genre:** Character-Driven Gritty Fantasy
+*   **Overview:** A short, atmospheric opening draft tracking the bond of battlefield brotherhood and a midnight ambush on a rogue encampment. Writing was halted to officially merge its characters and themes directly into the grander framework of *Crossroads: Hope and The Curse*.
+*   [**More details about Brother Blood**](./Brother%20Blood/)

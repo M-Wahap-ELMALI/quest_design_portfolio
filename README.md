@@ -51,6 +51,13 @@ While both sides of this portfolio share the same dedication to building rich, i
 *   [**Redemption: The Saint and the Beast**](./Novels/Redemption/)
 
 
+#### 4. Brother Blood
+
+*   **Status:** Permanently Shelved (Merged into *Crossroads: Hope and The Curse*)
+*   **Genre:** Character-Driven Gritty Fantasy
+*   **Brief Synopsis:** A brief, highly atmospheric opening draft detailing the visceral weight of battlefield brotherhood and a sudden midnight ambush in the dark, windswept forests of the West. Development on this standalone storyline was halted to officially fold its characters, dialogue style, and thematic elements directly into the grander narrative tapestry of *Crossroads: Hope and The Curse*.
+*   [**Brother Blood**](./Novels/Brother%20Blood/)
+
 
 ## QUEST DESIGN DOCUMENTS
 
