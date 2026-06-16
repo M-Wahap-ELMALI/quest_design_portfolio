@@ -43,6 +43,14 @@ While both sides of this portfolio share the same dedication to building rich, i
 * [**The Hope And The Curse**](./Novels/The%20Hope%20And%20The%20Curse/)
 
 
+#### 3. Redemption: The Saint and the Beast
+
+*   **Status:** In Progress (On Shelf / Draft Revision)
+*   **Genre:** Gritty Urban Dark Fantasy / Psychological Noir
+*   **Brief Synopsis:** An atmospheric contemporary dark fantasy tracking a desperate street criminal in Birmingham who becomes the host to an ancient cosmic entity. The narrative weaves a bleak crime-noir perspective with a hidden reality of secret occult organizations, runic restrictions, and divine gatekeepers. The prose details the psychological fracture of a host fighting for autonomy while managing visceral, ancestral visions of a forgotten devastation.
+*   [**Redemption: The Saint and the Beast**](./Novels/Redemption/)
+
+
 
 ## QUEST DESIGN DOCUMENTS
 

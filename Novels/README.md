@@ -28,3 +28,10 @@ This section houses the structural architecture, world-building documentation, a
 *   **Overview:** A multi-POV dark fantasy epic exploring the heavy cycle of vengeance and the crushing isolation of cosmic curses. Framed via a unique generational time-split, the chronicle bridges a distant, peaceful present with a raw, ancient era linked by volatile dimensional gateways.
 
 * [**More details about The Hope And The Curse**](./The%20Hope%20And%20The%20Curse/)
+
+
+### 3. Redemption: The Saint and the Beast
+*   **Status:** In Progress (On Shelf / Draft Revision)
+*   **Genre:** Gritty Urban Dark Fantasy / Psychological Noir
+*   **Overview:** An atmospheric, contemporary dark fantasy tracking a desperate street criminal in Birmingham who becomes the host to an ancient cosmic entity. The narrative balances a gritty crime-noir reality with a hidden world of occult agencies, divine gatekeepers, and runic iron sorcery.
+*   [**More details about Redemption: The Saint and the Beast**](./Redemption/)
