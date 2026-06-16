@@ -51,7 +51,7 @@ While both sides of this portfolio share the same dedication to building rich, i
 *   [**Redemption: The Saint and the Beast**](./Novels/Redemption/)
 
 
-#### 4. Brother Blood
+#### 4. Blood Brother
 
 *   **Status:** Permanently Shelved (Merged into *Crossroads: Hope and The Curse*)
 *   **Genre:** Character-Driven Gritty Fantasy
