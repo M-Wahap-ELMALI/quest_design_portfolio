@@ -1,6 +1,6 @@
 # Brother Blood (Unfinished Draft / Shelved)
 
-This directory houses the early narrative concept, initial draft fragments, and character dialogue for the project **"Brother Blood"**. 
+This directory houses the early narrative concept, initial draft fragments, and character dialogue for the project **"Blood Brother"**. 
 
 
 ---
@@ -16,7 +16,7 @@ This directory houses the early narrative concept, initial draft fragments, and 
 
 ## Original Concept Overview
 
-*Brother Blood* was conceived as a gritty, character-driven fantasy focusing on the heavy bond of battlefield brotherhood, the moral gray area of contract mercenary work, and the weight of ancestral debts. 
+*Blood Brother* was conceived as a gritty, character-driven fantasy focusing on the heavy bond of battlefield brotherhood, the moral gray area of contract mercenary work, and the weight of ancestral debts. 
 
 The story opens in the dark, windswept forests of the West, tracking a brutal night ambush on a rogue encampment. It introduces the stark contrast between duty-bound knights and cynical, fame-seeking sellswords, exploring how shared violence cuts through political divides.
 
@@ -25,7 +25,7 @@ The story opens in the dark, windswept forests of the West, tracking a brutal ni
 ## Core Characters
 
 
-*   **Sir Arirthel:** A striking, blue-eyed Knight of the Queen. Deeply honorable, quiet, and unbothered by walking in caked blood, he finds a rhythmic, meditative peace in training with his blade alone in the dark.
+*   **Arirthel:** A striking, blue-eyed Knight of the Queen. Deeply honorable, quiet, and unbothered by walking in caked blood, he finds a rhythmic, meditative peace in training with his blade alone in the dark.
 
 *   **Crawfolk "Crowley" the Dangler:** Arirthel’s skinnier, long-haired companion. A practical, coin-hungry fighter with a bastard smile and a bard-like reputation, driven purely by wine, women, and survival.
 
