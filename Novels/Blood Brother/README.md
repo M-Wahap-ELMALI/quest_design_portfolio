@@ -42,5 +42,4 @@ The story opens in the dark, windswept forests of the West, tracking a brutal ni
 
 ## Legacy Links
 
-*   [**Read the Original Fragment Draft Here**](./Blood%20Blood.pdf
-)
+*   [**Read the Original Fragment Draft Here**](./Blood%20Brother.pdf)
