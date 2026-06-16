@@ -8,7 +8,7 @@ This directory houses the early narrative concept, initial draft fragments, and 
 
 ## Project Status Update
 
-> ⚠️ **Notice:** Writing on this standalone project has been permanently halted. After developing the initial opening scene, I realized the core characters, thematic layout, and narrative architecture belonged within a much larger world. 
+> ⚠️ **Notice:** Writing on this standalone project has been halted. After developing the initial opening scene, I realized the core characters, thematic layout, and narrative architecture belonged within a much larger world. 
 > 
 > I have decided to officially connect this storyline with **"Crossroads: Hope and The Curse"**, integrating these elements directly into that project's broader epic fantasy framework. 
 

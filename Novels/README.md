@@ -38,7 +38,7 @@ This section houses the structural architecture, world-building documentation, a
 
 
 ### 4. Blood Brother
-*   **Status:** Permanently Shelved (Merged into *Crossroads: Hope and The Curse*)
+*   **Status:** Merged into *Crossroads: Hope and The Curse*
 *   **Genre:** Character-Driven Gritty Fantasy
 *   **Overview:** A short, atmospheric opening draft tracking the bond of battlefield brotherhood and a midnight ambush on a rogue encampment. Writing was halted to officially merge its characters and themes directly into the grander framework of *Crossroads: Hope and The Curse*.
 *   [**More details about Brother Blood**](./Blood%20Brother/)
